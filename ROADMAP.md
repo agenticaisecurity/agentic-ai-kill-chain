@@ -7,14 +7,14 @@
 - [x] Versioned ATLAS identifier extract and caveated crosswalk.
 - [x] Deterministic policy demonstration with benign, protected-file and residual-disclosure cases.
 - [x] Reproducible expected JSON and local unit/content checks.
-- [x] GitHub Actions configuration; remote execution is pending publication.
+- [x] GitHub Actions configuration for Python 3.11–3.13.
 
 ## Next: prepare the first public release
 
 - [ ] Select a license for the original code and writing; retain upstream notices.
-- [ ] Review the staged repository contents and create its first commit.
-- [ ] Create the GitHub repository under the intended account and push only this companion.
-- [ ] Confirm the Python 3.11–3.13 CI matrix passes on GitHub.
+- [x] Review the staged repository contents and create its first commit.
+- [x] Create the private GitHub repository under `agenticaisecurity` and push only this companion.
+- [x] Confirm the Python 3.11–3.13 CI matrix passes on GitHub (initial run: https://github.com/agenticaisecurity/agentic-ai-kill-chain/actions/runs/35427034310).
 - [ ] Ask for specific mapping or threat-model feedback; record corrections in the changelog.
 
 ## Then: one real agent experiment

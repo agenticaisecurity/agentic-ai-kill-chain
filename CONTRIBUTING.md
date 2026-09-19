@@ -22,4 +22,4 @@ Keep these distinctions visible:
 
 Do not change expected results merely to make a failing test pass. Explain any changed policy or workload and preserve benign-task checks and residual failure cases.
 
-Original-material licensing is still pending in this local draft. Resolve the license before accepting external contributions or publishing a public release.
+Original-material licensing is still pending in this private draft. Resolve the license before accepting external contributions or publishing a public release.

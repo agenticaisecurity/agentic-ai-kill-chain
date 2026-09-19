@@ -6,7 +6,7 @@
 
 A practitioner companion with a full article, six structured scenarios, versioned MITRE ATLAS associations, and a small runnable permission demonstration.
 
-**Status: local development draft.** The scenarios are scripted explanations. The executable example tests a deterministic tool boundary using synthetic, in-memory data; it does not run an LLM or measure prompt-injection resistance. No MITRE, OWASP or employer endorsement is claimed.
+**Status: private development draft.** The scenarios are scripted explanations. The executable example tests a deterministic tool boundary using synthetic, in-memory data; it does not run an LLM or measure prompt-injection resistance. No MITRE, OWASP or employer endorsement is claimed.
 
 ## Run the first example
 
@@ -63,7 +63,7 @@ The six labels are **RECON → INJECT → HIJACK → ESCALATE → EXFILTRATE →
 | Full execution of all six scenarios | Not implemented |
 | OS sandbox, production authorization service, robotics validation | Not implemented |
 
-GitHub Actions is configured for Python 3.11–3.13. The workflow has not run on GitHub because this repository is local. Local validation was performed with Python 3.13.
+GitHub Actions checks Python 3.11–3.13 on pushes and pull requests. See the [workflow runs](https://github.com/agenticaisecurity/agentic-ai-kill-chain/actions/workflows/checks.yml) for current results. Local validation was performed with Python 3.13.
 
 ## Contribute
 
