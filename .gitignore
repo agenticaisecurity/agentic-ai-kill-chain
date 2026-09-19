@@ -1,6 +1,5 @@
 __pycache__/
 *.py[cod]
-.claude/
 .venv/
 .DS_Store
 .env
@@ -9,3 +8,24 @@ results/
 *.egg-info/
 build/
 dist/
+
+# Local AI tooling, instructions, session state and review artifacts (any depth).
+.claude/
+.codex/
+.agents/
+.agent/
+.agent-work/
+.cursor/
+.windsurf/
+.gemini/
+.aider*
+.claude.json
+.claude.json.*
+[Cc][Ll][Aa][Uu][Dd][Ee]*.[Mm][Dd]
+[Cc][Oo][Dd][Ee][Xx]*.[Mm][Dd]
+[Aa][Gg][Ee][Nn][Tt][Ss]*.[Mm][Dd]
+[Gg][Ee][Mm][Ii][Nn][Ii]*.[Mm][Dd]
+.cursorrules
+.windsurfrules
+*.session.jsonl
+*.transcript.jsonl
