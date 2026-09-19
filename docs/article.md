@@ -238,7 +238,7 @@ In multi-agent systems, agents delegate tasks to other agents. Protocols such as
 
 Identified risk
 
-The confused deputy problem — formalized by Hardy in 1988 for operating systems — maps directly to multi-agent AI. The arxiv 2504.19956 threat model identifies inter-agent delegation as a key escalation vector: when Agent A delegates to Agent B, Agent B may execute with its own permissions. Authentication establishes identity; authorization must separately limit which actions and resources the caller can request.
+Hardy’s 1988 confused-deputy example shows a compiler using its own authority on a caller-selected file; his capability-based remedy binds resource designation to the authority used. I use that distinction to examine multi-agent delegation. The arxiv 2504.19956 threat model identifies inter-agent delegation as a key escalation vector: when Agent A delegates to Agent B, Agent B may execute with its own permissions. Authentication establishes identity; authorization must separately limit which actions and resources the caller can request.
 
 Source: Hardy, N. "The Confused Deputy" (1988); arxiv 2504.19956
 
@@ -392,7 +392,7 @@ Compromised orchestration can abuse available delegation paths when checks are m
 
 Multi-Agent
 
-The confused deputy problem — formalized by Hardy in 1988 for operating systems — also applies to multi-agent AI. A low-privilege agent can craft requests that a higher-privilege orchestrator executes using its own access. Authenticate the caller and enforce explicit delegation and resource scopes, rather than assuming an authenticated agent is authorized for every action.
+Hardy’s confused-deputy lesson also applies to multi-agent AI: choosing a resource by name does not establish the caller’s authority to use it. A low-privilege agent can craft requests that a higher-privilege orchestrator executes using its own access. Authenticate the caller and enforce explicit delegation and resource scopes, rather than assuming an authenticated agent is authorized for every action.
 
 Source: Hardy, N. "The Confused Deputy" (1988); "Securing Agentic AI", arxiv 2504.19956
 

@@ -1,3 +1,4 @@
+from dataclasses import asdict
 import json
 from pathlib import Path
 import unittest
@@ -5,7 +6,7 @@ from unittest.mock import patch
 
 from killchain_lab.demo import (
     Denied, Policy, SOURCE, SECRET, SYNTHETIC_SECRET, REVIEW_DESTINATION,
-    ToolRuntime, attempt_disclosure, benign_review, fixture, policies, run_comparison,
+    ToolRuntime, attempt_disclosure, benign_review, canonical_path, fixture, policies, run_comparison,
 )
 
 
@@ -67,6 +68,52 @@ class PolicyDemoTests(unittest.TestCase):
         self.assertEqual(first, run_comparison())
         self.assertNotIn(SYNTHETIC_SECRET, json.dumps(first))
         self.assertFalse(first["model_invoked"])
+
+    def test_denied_resource_arguments_do_not_enter_audit(self):
+        for action, resource in (("read", "/workspace/" + SYNTHETIC_SECRET),
+                                 ("publish", SYNTHETIC_SECRET)):
+            with self.subTest(action=action):
+                runtime = ToolRuntime(policies()[1], fixture())
+                with self.assertRaises(Denied):
+                    if action == "read":
+                        runtime.read(resource)
+                    else:
+                        runtime.publish(resource, "unused")
+                self.assertEqual(len(runtime.decisions), 1)
+                self.assertFalse(runtime.decisions[0].allowed)
+                self.assertNotIn(SYNTHETIC_SECRET, json.dumps([asdict(d) for d in runtime.decisions]))
+                self.assertEqual(runtime.published, [])
+
+    def test_allowed_resource_arguments_do_not_enter_audit(self):
+        # Policy membership must not turn an arbitrary identifier into safe metadata.
+        path = "/workspace/" + SYNTHETIC_SECRET
+        runtime = ToolRuntime(Policy("custom", frozenset({path}), frozenset({SYNTHETIC_SECRET})),
+                              {path: "synthetic content"})
+        self.assertEqual(runtime.read(path), "synthetic content")
+        runtime.publish(SYNTHETIC_SECRET, "unused")
+        self.assertEqual(len(runtime.decisions), 2)
+        self.assertTrue(all(d.allowed for d in runtime.decisions))
+        self.assertNotIn(SYNTHETIC_SECRET, json.dumps([asdict(d) for d in runtime.decisions]))
+        self.assertEqual(runtime.published, [(SYNTHETIC_SECRET, "unused")])
+
+    def test_invalid_resource_arguments_do_not_enter_audit(self):
+        runtime = ToolRuntime(policies()[1], fixture())
+        with self.assertRaises(Denied):
+            runtime.read("../" + SYNTHETIC_SECRET)
+        self.assertNotIn(SYNTHETIC_SECRET, json.dumps([asdict(d) for d in runtime.decisions]))
+        self.assertFalse(runtime.decisions[0].allowed)
+
+    def test_path_syntax_and_allowlist_denials_have_distinct_layers(self):
+        for path in (" " + SOURCE, "\uff0f" + SOURCE[1:]):
+            with self.subTest(path=path), self.assertRaises(ValueError):
+                canonical_path(path)
+        # NEL is not an ASCII control; it passes syntax but is outside the allowlist.
+        nel_path = SOURCE + "\u0085"
+        self.assertEqual(canonical_path(nel_path), nel_path)
+        runtime = ToolRuntime(policies()[1], fixture())
+        with self.assertRaises(Denied):
+            runtime.read(nel_path)
+        self.assertEqual(runtime.decisions[-1].reason, "outside allowlist")
 
     def test_checked_in_results_reproduce_exactly(self):
         path = Path(__file__).resolve().parents[1] / "examples/expected-results.json"

@@ -69,6 +69,21 @@ def validate_crosswalk(data: dict, identifiers: dict) -> None:
     require(seen == set(identifiers["tactics"]), "crosswalk must account for every tactic in the pinned identifier extract")
 
 
+def validate_article(article: str, identifiers: dict, refs: list[dict]) -> None:
+    """Check pinned IDs and numbered citation bindings, not semantic truth."""
+    known = set(identifiers["tactics"]) | set(identifiers["techniques"])
+    mentioned = set(re.findall(r"\bAML\.T[A-Za-z0-9]*(?:\.[A-Za-z0-9]+)*", article))
+    for identifier in sorted(mentioned):
+        require(identifier in known, f"article ATLAS identifier absent from pinned extract: {identifier}")
+    require([x["id"] for x in refs] == list(range(1, len(refs) + 1)), "reference ids must be sequential and unique")
+    for ref in refs:
+        require(nonempty(ref.get("citation")), f"reference {ref['id']} missing citation identity")
+        require(isinstance(ref.get("url"), str) and ref["url"].startswith("https://"), "reference URL must use HTTPS")
+    entries = re.findall(r"^\[(\d+)\] \[([^\]\n]+)\]\((https://[^\s]+)\)$", article, re.MULTILINE)
+    expected = [(str(ref["id"]), ref["citation"], ref["url"]) for ref in refs]
+    require(entries == expected, "article numbered citation identity/URL mismatch")
+
+
 def validate_repository(root: Path = ROOT) -> dict[str, int]:
     load = lambda path: json.loads((root / path).read_text(encoding="utf-8"))
     identifiers = load("data/atlas-2026.01-identifiers.json")
@@ -83,11 +98,8 @@ def validate_repository(root: Path = ROOT) -> dict[str, int]:
         require(data["id"] not in seen, "duplicate scenario id")
         seen.add(data["id"])
     refs = load("data/references.json")["references"]
-    require([x["id"] for x in refs] == list(range(1, len(refs) + 1)), "reference ids must be sequential and unique")
-    require(all(x["url"].startswith("https://") for x in refs), "reference URL must use HTTPS")
     article = (root / "docs/article.md").read_text(encoding="utf-8")
-    for ref in refs:
-        require(ref["url"] in article, f"reference {ref['id']} absent from article")
+    validate_article(article, identifiers, refs)
     for relative in re.findall(r"!\[[^\]]*\]\(([^)]+)\)", article):
         target = (root / "docs" / relative).resolve()
         require(target.is_relative_to((root / "docs").resolve()) and target.is_file(), "missing or out-of-tree article image")

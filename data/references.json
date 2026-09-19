@@ -2,79 +2,98 @@
   "references": [
     {
       "id": 1,
-      "url": "https://github.com/mitre-atlas/atlas-data/blob/main/dist/v6/ATLAS-2026.01.yaml"
+      "url": "https://github.com/mitre-atlas/atlas-data/blob/main/dist/v6/ATLAS-2026.01.yaml",
+      "citation": "MITRE ATLAS release 2026.01. Versioned source for the tactic and technique mappings on this page."
     },
     {
       "id": 2,
-      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "citation": "OWASP Top 10 for LLM Applications v2.0 (2025). owasp.org/www-project-top-10-for-large-language-model-applications/"
     },
     {
       "id": 3,
-      "url": "https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html"
+      "url": "https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html",
+      "citation": "Lockheed Martin Cyber Kill Chain — 7-stage intrusion lifecycle model. Structural model adapted for autonomous AI agents."
     },
     {
       "id": 4,
-      "url": "https://arxiv.org/abs/2504.19956"
+      "url": "https://arxiv.org/abs/2504.19956",
+      "citation": "\"Securing Agentic AI: A Comprehensive Threat Model.\" arxiv 2504.19956. Identifies emergent security properties when autonomy, memory, and tool use combine."
     },
     {
       "id": 5,
-      "url": "https://arxiv.org/abs/2302.12173"
+      "url": "https://arxiv.org/abs/2302.12173",
+      "citation": "Greshake et al. “Not what you’ve signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” 2023."
     },
     {
       "id": 6,
-      "url": "https://doi.org/10.1145/54289.871709"
+      "url": "https://doi.org/10.1145/54289.871709",
+      "citation": "Hardy, N. \"The Confused Deputy: (or why capabilities might have been invented).\" (1988). Original formalization of the confused deputy problem."
     },
     {
       "id": 7,
-      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "citation": "OWASP Top 10 for Agentic Applications (2026). Published December 9, 2025. Dedicated coverage of agent goals, tools, identity, memory and inter-agent risks."
     },
     {
       "id": 8,
-      "url": "https://csrc.nist.gov/Presentations/2025/mitre-atlas"
+      "url": "https://csrc.nist.gov/Presentations/2025/mitre-atlas",
+      "citation": "NIST Presentation on ATLAS. csrc.nist.gov/csrc/media/Presentations/2025/mitre-atlas/"
     },
     {
       "id": 9,
-      "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools"
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+      "citation": "Model Context Protocol, Tools specification, revision 2025-11-25. Tool behavior, schema and security considerations."
     },
     {
       "id": 10,
-      "url": "https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/"
+      "url": "https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/",
+      "citation": "Rehberger, J. \"Data Exfiltration from Bing Chat via Indirect Prompt Injection.\" (2023). Exfiltration through markdown rendering and crafted URLs."
     },
     {
       "id": 11,
-      "url": "https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/"
+      "url": "https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/",
+      "citation": "Rehberger, J. / SpaiwareAI. \"Persistent Memory Injection in ChatGPT.\" (2024). Cross-session memory poisoning via document processing."
     },
     {
       "id": 12,
-      "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/"
+      "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/",
+      "citation": "Rehberger, J. \"ChatGPT Plugins: Data Exfiltration via Images & Cross Plugin Request Forgery.\" (2023). Plugin-retrieved content and markdown image exfiltration."
     },
     {
       "id": 13,
-      "url": "https://simonwillison.net/2024/Mar/5/prompt-injection-jailbreaking/"
+      "url": "https://simonwillison.net/2024/Mar/5/prompt-injection-jailbreaking/",
+      "citation": "Willison, S. \"Prompt injection and jailbreaking are not the same thing.\" (2024). Distinction between prompt injection (security) and jailbreaking (policy)."
     },
     {
       "id": 14,
-      "url": "https://arxiv.org/abs/2406.13352v3"
+      "url": "https://arxiv.org/abs/2406.13352v3",
+      "citation": "Debenedetti et al. “AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents.” Version 3, November 2024."
     },
     {
       "id": 15,
-      "url": "https://arxiv.org/abs/2309.15817"
+      "url": "https://arxiv.org/abs/2309.15817",
+      "citation": "Ruan, Y. et al. \"Identifying the Risks of LM Agents with an LM-Emulated Sandbox.\" (2024). Systematic evaluation of risks from LLM agents with tool use."
     },
     {
       "id": 16,
-      "url": "https://doi.org/10.6028/NIST.AI.100-2e2023"
+      "url": "https://doi.org/10.6028/NIST.AI.100-2e2023",
+      "citation": "NIST AI 100-2. \"Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations.\" (2023 edition, published January 2024; a historical reference). NIST's formal AI security taxonomy."
     },
     {
       "id": 17,
-      "url": "https://doi.org/10.6028/NIST.AI.600-1"
+      "url": "https://doi.org/10.6028/NIST.AI.600-1",
+      "citation": "NIST AI 600-1. \"Artificial Intelligence Risk Management Framework: Generative AI Profile.\" (2024). NIST's generative AI deployment risk guidance, covers agent-adjacent risks."
     },
     {
       "id": 18,
-      "url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/"
+      "url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/",
+      "citation": "OWASP LLM07:2025 — System Prompt Leakage."
     },
     {
       "id": 19,
-      "url": "https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/"
+      "url": "https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/",
+      "citation": "OWASP LLM08:2025 — Vector and Embedding Weaknesses."
     }
   ]
 }

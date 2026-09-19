@@ -33,3 +33,11 @@ An allowlisted output destination can still be an unauthorized recipient of part
 The runtime performs no host file reads, network requests, subprocess calls or model calls. The JSON-output command writes only to stdout; shell redirection, if used, writes the selected output file.
 
 The six documented scenarios explore a broader conceptual space. Only the narrow read/publication decision related to the code-review examples is executable here.
+
+## Audit metadata and authority attribution
+
+Decision events use fixed labels for known fixture resources and a constant redaction marker for every other identifier, on allowed as well as denied calls. Invalid-path events also omit the supplied string. This closes direct copying of attacker-controlled path/destination text into the audit resource field. It does not eliminate channels through which choices of actions, labels, denials, counts or timing could encode information. Published content remains intentionally unfiltered so the residual-disclosure case is preserved.
+
+Path syntax and authorization are separate checks. A leading space or fullwidth initial slash fails the absolute-path syntax check; a NEL character (U+0085) is outside the ASCII-control filter and is denied by exact-set membership under the shipped policies. This is a narrow virtual-path grammar, not comprehensive Unicode sanitization.
+
+The runtime uses its configured authority for each named resource. In that sense this demo uses ambient authority (our characterization, not a quotation from Hardy); it does not implement caller-provided capabilities, caller identity, or per-request delegation. See Hardy's [original paper](https://doi.org/10.1145/54289.871709), also available as an [author-text reproduction](https://pdos.csail.mit.edu/6.828/2009/readings/hardy-confused-deputy.html). Scope reduction in this lab should not be mistaken for a capability-based solution to confused delegation.

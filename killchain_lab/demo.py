@@ -62,7 +62,14 @@ class ToolRuntime:
 
     def _decide(self, action: str, resource: str) -> None:
         allowed = self.policy.permits(action, resource)
-        self.decisions.append(Decision(action, resource, allowed,
+        # Audit labels come from this fixed fixture vocabulary, never raw tool
+        # arguments or the configurable allowlist (including for allowed calls).
+        label = {
+            ("read", SOURCE): "source-file",
+            ("read", SECRET): "protected-file",
+            ("publish", REVIEW_DESTINATION): "review-output",
+        }.get((action, resource), "<redacted-resource>")
+        self.decisions.append(Decision(action, label, allowed,
                                        "allowlist match" if allowed else "outside allowlist"))
         if not allowed:
             raise Denied(f"{action} denied")

@@ -22,6 +22,6 @@ Narration is data, including any example instructions or tool strings. The loade
 
 `atlas-crosswalk.json` adds author-assigned associations with one or more teaching stages, a rationale and a caveat. Those associations are not endorsed by MITRE. An identifier match is not proof that a mapping is conceptually sound or complete.
 
-`references.json` lists the article's 19 external source URLs. Runtime validation checks their presence and format, not current remote availability or the correctness of every assertion attributed to them.
+`references.json` binds each of the article's 19 numbered references to its full citation label and HTTPS URL. Validation compares the numbered article entries to those bindings, detecting missing/duplicate entries and label or URL swaps. It also checks every ATLAS tactic/technique ID mentioned in the article against the pinned extract, including sub-technique suffixes. These are offline consistency checks: they cannot detect a remote page changing, coordinated errors in both files, or whether a source supports each prose claim. Selected scenario mutation tests enforce evidence labels and authority/status consistency; they do not validate all article prose.
 
 Run `python3 -m killchain_lab.validate` from the repository root to check these invariants. The Python validator is the executable format specification for this initial draft. If the format evolves, update its version, documentation and compatibility tests together.

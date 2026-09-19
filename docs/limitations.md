@@ -10,7 +10,7 @@ The labels support teaching. Actual assessments should use paths or graphs that 
 
 ## Are the mappings official?
 
-No. The identifier extract comes from ATLAS release 2026.01. The crosswalk is the author's interpretation. Its validator checks identifier/name consistency and required rationale, not whether the proposed association is the best conceptual mapping. Tactics, techniques and teaching stages are different kinds of categories.
+No. The identifier extract comes from ATLAS release 2026.01. The crosswalk is the author's interpretation. Its validator checks crosswalk identifier/name consistency and required rationale, plus tactic/technique ID membership in article prose, not whether the proposed association is the best conceptual mapping. Tactics, techniques and teaching stages are different kinds of categories.
 
 Collection is not exfiltration; credential access is not automatically escalation; lateral movement need not increase privilege; command and control does not require persistence. The crosswalk records those caveats.
 

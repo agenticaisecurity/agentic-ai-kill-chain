@@ -9,13 +9,13 @@
             "action": "read",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "/workspace/src/review_target.py"
+            "resource": "source-file"
           },
           {
             "action": "publish",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "public-review"
+            "resource": "review-output"
           }
         ],
         "protected": [
@@ -23,13 +23,13 @@
             "action": "read",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "/workspace/.env"
+            "resource": "protected-file"
           },
           {
             "action": "publish",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "public-review"
+            "resource": "review-output"
           }
         ],
         "residual": [
@@ -37,13 +37,13 @@
             "action": "read",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "/workspace/src/review_target.py"
+            "resource": "source-file"
           },
           {
             "action": "publish",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "public-review"
+            "resource": "review-output"
           }
         ]
       },
@@ -59,13 +59,13 @@
             "action": "read",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "/workspace/src/review_target.py"
+            "resource": "source-file"
           },
           {
             "action": "publish",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "public-review"
+            "resource": "review-output"
           }
         ],
         "protected": [
@@ -73,7 +73,7 @@
             "action": "read",
             "allowed": false,
             "reason": "outside allowlist",
-            "resource": "/workspace/.env"
+            "resource": "protected-file"
           }
         ],
         "residual": [
@@ -81,13 +81,13 @@
             "action": "read",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "/workspace/src/review_target.py"
+            "resource": "source-file"
           },
           {
             "action": "publish",
             "allowed": true,
             "reason": "allowlist match",
-            "resource": "public-review"
+            "resource": "review-output"
           }
         ]
       },

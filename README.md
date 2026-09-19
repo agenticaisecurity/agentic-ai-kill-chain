@@ -37,7 +37,7 @@ For reproducible JSON and metadata-only decision traces:
 python3 -m killchain_lab.demo --json
 ```
 
-The tests compare that result with [the checked-in result](examples/expected-results.json). File contents are not copied into the decision logs.
+The tests compare that result with [the checked-in result](examples/expected-results.json). File contents and arbitrary tool-argument identifiers are not copied into the decision logs. Known fixture resources use fixed labels; other resource names are redacted on both allowed and denied calls. This reduces direct disclosure through audit fields, but is not a claim that logs cannot carry information through event choices, counts or timing.
 
 ## Explore the companion
 
