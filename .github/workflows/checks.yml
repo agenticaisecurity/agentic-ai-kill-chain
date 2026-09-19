@@ -1,0 +1,26 @@
+name: Content and policy checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Validate content and references
+        run: python -m killchain_lab.validate
+      - name: Run unit tests and reproduce expected results
+        run: python -m unittest discover -s tests -v
+      - name: Show deterministic example
+        run: python -m killchain_lab.demo

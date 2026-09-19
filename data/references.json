@@ -1,0 +1,80 @@
+{
+  "references": [
+    {
+      "id": 1,
+      "url": "https://github.com/mitre-atlas/atlas-data/blob/main/dist/v6/ATLAS-2026.01.yaml"
+    },
+    {
+      "id": 2,
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+    },
+    {
+      "id": 3,
+      "url": "https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html"
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/abs/2504.19956"
+    },
+    {
+      "id": 5,
+      "url": "https://arxiv.org/abs/2302.12173"
+    },
+    {
+      "id": 6,
+      "url": "https://doi.org/10.1145/54289.871709"
+    },
+    {
+      "id": 7,
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    {
+      "id": 8,
+      "url": "https://csrc.nist.gov/Presentations/2025/mitre-atlas"
+    },
+    {
+      "id": 9,
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools"
+    },
+    {
+      "id": 10,
+      "url": "https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/"
+    },
+    {
+      "id": 11,
+      "url": "https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/"
+    },
+    {
+      "id": 12,
+      "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/"
+    },
+    {
+      "id": 13,
+      "url": "https://simonwillison.net/2024/Mar/5/prompt-injection-jailbreaking/"
+    },
+    {
+      "id": 14,
+      "url": "https://arxiv.org/abs/2406.13352v3"
+    },
+    {
+      "id": 15,
+      "url": "https://arxiv.org/abs/2309.15817"
+    },
+    {
+      "id": 16,
+      "url": "https://doi.org/10.6028/NIST.AI.100-2e2023"
+    },
+    {
+      "id": 17,
+      "url": "https://doi.org/10.6028/NIST.AI.600-1"
+    },
+    {
+      "id": 18,
+      "url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/"
+    },
+    {
+      "id": 19,
+      "url": "https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/"
+    }
+  ]
+}

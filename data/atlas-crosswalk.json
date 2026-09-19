@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "source_release": "2026.01",
+  "relationship": "illustrative-author-association-not-taxonomy-equivalence",
+  "endorsed_by_mitre": false,
+  "mappings": [
+    {
+      "tactic_id": "AML.TA0002",
+      "tactic_name": "Reconnaissance",
+      "stages": [
+        "recon"
+      ],
+      "rationale": "Attacker gathers information about capabilities and exposure.",
+      "caveat": "Conversation is one possible interface, not a required or universally available one."
+    },
+    {
+      "tactic_id": "AML.TA0003",
+      "tactic_name": "Resource Development",
+      "stages": [
+        "inject"
+      ],
+      "rationale": "Payload or malicious-service preparation may precede delivery.",
+      "caveat": "Resource preparation is not itself prompt injection; this is a narrative grouping."
+    },
+    {
+      "tactic_id": "AML.TA0004",
+      "tactic_name": "Initial Access",
+      "stages": [
+        "inject"
+      ],
+      "rationale": "An injected input may provide an initial foothold in an application workflow.",
+      "caveat": "Other initial-access methods exist; delivering text does not establish control."
+    },
+    {
+      "tactic_id": "AML.TA0000",
+      "tactic_name": "AI Model Access",
+      "stages": [
+        "recon",
+        "inject"
+      ],
+      "rationale": "Access to model interfaces may enable probing or input delivery.",
+      "caveat": "Model access is not equivalent to reconnaissance and can be a prerequisite."
+    },
+    {
+      "tactic_id": "AML.TA0005",
+      "tactic_name": "Execution",
+      "stages": [
+        "hijack"
+      ],
+      "rationale": "Redirected execution can implement an attacker-requested action.",
+      "caveat": "Hijacked output is not proof that a tool executed; validate action traces."
+    },
+    {
+      "tactic_id": "AML.TA0006",
+      "tactic_name": "Persistence",
+      "stages": [
+        "persist"
+      ],
+      "rationale": "Durable instruction or configuration changes may influence future runs.",
+      "caveat": "Persistence is conditional on storage, retrieval and subsequent behavior."
+    },
+    {
+      "tactic_id": "AML.TA0007",
+      "tactic_name": "Defense Evasion",
+      "stages": [
+        "hijack"
+      ],
+      "rationale": "A malicious instruction may attempt to avoid a defensive check during redirection.",
+      "caveat": "Behavioral redirection does not automatically imply defense evasion."
+    },
+    {
+      "tactic_id": "AML.TA0008",
+      "tactic_name": "Discovery",
+      "stages": [
+        "recon"
+      ],
+      "rationale": "After gaining access, an attacker may discover tools or resources.",
+      "caveat": "Discovery after access and external reconnaissance are distinct tactics."
+    },
+    {
+      "tactic_id": "AML.TA0009",
+      "tactic_name": "Collection",
+      "stages": [
+        "exfiltrate"
+      ],
+      "rationale": "Data collection may supply a later disclosure step.",
+      "caveat": "Collection is not exfiltration; an unauthorized recipient must receive the data."
+    },
+    {
+      "tactic_id": "AML.TA0001",
+      "tactic_name": "AI Attack Staging",
+      "stages": [
+        "inject"
+      ],
+      "rationale": "Attack preparation or positioning may support the illustrated input path.",
+      "caveat": "A broad tactic association does not assign every staging technique to injection."
+    },
+    {
+      "tactic_id": "AML.TA0013",
+      "tactic_name": "Credential Access",
+      "stages": [
+        "escalate",
+        "exfiltrate"
+      ],
+      "rationale": "Credentials may enable further access or themselves be disclosed.",
+      "caveat": "Credential access can occur without privilege escalation."
+    },
+    {
+      "tactic_id": "AML.TA0012",
+      "tactic_name": "Privilege Escalation",
+      "stages": [
+        "escalate"
+      ],
+      "rationale": "A deputy or other path can provide effective authority beyond the originating principal.",
+      "caveat": "Misuse of existing permissions is not automatically escalation."
+    },
+    {
+      "tactic_id": "AML.TA0015",
+      "tactic_name": "Lateral Movement",
+      "stages": [
+        "escalate"
+      ],
+      "rationale": "Delegation can bridge components and sometimes reach different authority.",
+      "caveat": "Lateral movement does not necessarily increase privilege."
+    },
+    {
+      "tactic_id": "AML.TA0010",
+      "tactic_name": "Exfiltration",
+      "stages": [
+        "exfiltrate"
+      ],
+      "rationale": "Protected information reaches an unauthorized recipient.",
+      "caveat": "An output that the attacker cannot observe is not that exfiltration path."
+    },
+    {
+      "tactic_id": "AML.TA0011",
+      "tactic_name": "Impact",
+      "stages": [
+        "hijack",
+        "escalate",
+        "exfiltrate",
+        "persist"
+      ],
+      "rationale": "Unauthorized actions can have integrity, confidentiality or availability consequences.",
+      "caveat": "The six-stage model does not cover every impact, including fraud or physical harm."
+    },
+    {
+      "tactic_id": "AML.TA0014",
+      "tactic_name": "Command and Control",
+      "stages": [
+        "persist"
+      ],
+      "rationale": "A durable callback can be one route for continued attacker direction.",
+      "caveat": "Command and control can exist without persistence; the association is conditional."
+    }
+  ]
+}

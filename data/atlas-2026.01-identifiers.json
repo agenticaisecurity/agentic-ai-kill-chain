@@ -1,0 +1,36 @@
+{
+  "source": {
+    "url": "https://github.com/mitre-atlas/atlas-data/blob/main/dist/v6/ATLAS-2026.01.yaml",
+    "release": "2026.01",
+    "retrieved": "2026-09-18",
+    "sha256": "b30775afe9f3b35748527ef0b72f03b2e99aac3a9651b29b3a1ab5873bb56829",
+    "extraction": "Identifier/name pairs only; the full upstream dataset is not bundled.",
+    "license_url": "https://github.com/mitre-atlas/atlas-data/blob/main/LICENSE"
+  },
+  "tactics": {
+    "AML.TA0000": "AI Model Access",
+    "AML.TA0001": "AI Attack Staging",
+    "AML.TA0002": "Reconnaissance",
+    "AML.TA0003": "Resource Development",
+    "AML.TA0004": "Initial Access",
+    "AML.TA0005": "Execution",
+    "AML.TA0006": "Persistence",
+    "AML.TA0007": "Defense Evasion",
+    "AML.TA0008": "Discovery",
+    "AML.TA0009": "Collection",
+    "AML.TA0010": "Exfiltration",
+    "AML.TA0011": "Impact",
+    "AML.TA0012": "Privilege Escalation",
+    "AML.TA0013": "Credential Access",
+    "AML.TA0014": "Command and Control",
+    "AML.TA0015": "Lateral Movement"
+  },
+  "techniques": {
+    "AML.T0051": "LLM Prompt Injection",
+    "AML.T0080.000": "Memory",
+    "AML.T0081": "Modify AI Agent Configuration",
+    "AML.T0086": "Exfiltration via AI Agent Tool Invocation",
+    "AML.T0098": "AI Agent Tool Credential Harvesting",
+    "AML.T0099": "AI Agent Tool Data Poisoning"
+  }
+}
