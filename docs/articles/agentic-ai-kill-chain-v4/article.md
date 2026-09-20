@@ -243,7 +243,7 @@ The first release needs a bounded use case, tested permissions and honest eviden
 
 The [companion repository](https://github.com/agenticaisecurity/agentic-ai-kill-chain) has tests covering the deterministic demo, its expected output and selected content checks on Python 3.11–3.13. They are not model attack trials.
 
-The repository is public. The original code is licensed under MIT, and the original writing and diagrams under CC BY 4.0; see the [licensing details](https://github.com/agenticaisecurity/agentic-ai-kill-chain/blob/codex/initial-companion/LICENSE.md). Third-party material retains its own terms. From the repository root, the following commands reproduce the demo and run the checks with Python 3.11 or newer:
+The repository is public. The original code is licensed under MIT, and the original writing and diagrams under CC BY 4.0; see the [licensing details](https://github.com/agenticaisecurity/agentic-ai-kill-chain/blob/HEAD/LICENSE.md). Third-party material retains its own terms. From the repository root, the following commands reproduce the demo and run the checks with Python 3.11 or newer:
 
 ```sh
 python3 -m killchain_lab.demo
