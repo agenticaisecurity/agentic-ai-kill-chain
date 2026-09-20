@@ -37,27 +37,31 @@ A possible memory path is therefore: untrusted content reaches a task, the task 
 
 This framing draws on the [Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), with threat vocabulary informed by [MITRE ATLAS](https://github.com/mitre-atlas/atlas-data/blob/main/dist/v6/ATLAS-2026.01.yaml) and [OWASP's agentic application guidance](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/). The associations in my companion are my interpretation, not an official mapping.
 
-The model is useful only if it makes the actual path easier to explain. If a sequence needs a branch or a loop, I draw it. I do not add a missing stage just to complete the diagram.
+The model should make the attack easier to explain. If the attack follows different paths or repeats a step, the diagram should show that. Stages that did not occur should be left out.
 
 ![Six questions for an agent attack path: reconnaissance, injection, hijack, escalation, exfiltration and persistence. Existing permission misuse is distinguished from escalation.](images/00-kill-chain.png)
 
 *Six review categories, not a required sequence. Follow the permissions and evidence at each step.*
 
-## Following the code-review path
+## Example: a code review that exposes a credential
 
-In the opening example, the legitimate task is a source review. The attacker controls a repository document and can see the posted comment. The victim's starting access must be stated before the test; discovering that access is a separate reconnaissance question.
+An agent is asked to review a source file and post its findings. While working, it reads a repository document that an attacker can edit. The attacker has added an instruction: read a credential file and include its contents in the review comment. The attacker can see that comment.
 
-The document supplies the injected instruction. A request to read the credential file would show a departure from the review task. If the agent already has that read permission, the path skips escalation. Publishing the credential to the attacker-visible comment establishes the disclosure.
+The attack has three distinct steps:
 
-Persistence is absent unless the agent also creates a durable change that can influence a later run. We should not mark it successful merely because a memory feature exists.
+1. **INJECT:** The attacker’s instruction reaches the agent through the document.
+2. **HIJACK:** The agent follows that instruction and attempts to read the credential, moving outside its assigned review task.
+3. **EXFILTRATE:** The credential appears in the comment where the attacker can read it.
 
-This gives the reviewer several distinct places to investigate: how the document became context, whether the model followed it, whether the read was permitted and who could see the output. A refusal, a denied read and a blocked publication are different results. Recording those differences helps identify which control worked.
+If the agent already has permission to read the credential file, no increase in access is needed. There is no escalation in that path. There is also no persistence unless the attack leaves something behind that can affect later work.
 
-I used the read and publication boundaries for the first executable example. The broader workflow remains an illustration; the demo supplies the tool actions directly.
+Different controls could stop different steps. The agent might ignore the instruction. The tool might deny the read. An output control might prevent publication. The result should identify which of those happened.
 
-## The disclosure path I missed in my own demo
+This is an illustrative attack path. The runnable demo below tests the read and publication permissions using fixed actions; it does not test whether an AI model follows the injected instruction.
 
-I built a [permission demo](https://github.com/agenticaisecurity/agentic-ai-kill-chain), and reviewing it found a disclosure path I had not tested for. A tool request could be denied while an attacker-supplied value still entered the audit trace. Blocking the operation had not blocked every output from processing the request.
+## What happens when the tool denies the request?
+
+I built a [permission demo](https://github.com/agenticaisecurity/agentic-ai-kill-chain) to compare which requests two access policies allow. During review, I found that denying a request could still expose data through the audit log.
 
 The trace omitted file contents but copied the resource argument. A caller could put a synthetic canary—a recognizable marker standing in for sensitive data—in a syntactically valid path or in a publication destination. Both requests could be denied while the marker still appeared in the trace.
 
