@@ -9,11 +9,12 @@
 - [x] Reproducible expected JSON and local unit/content checks.
 - [x] GitHub Actions configuration for Python 3.11–3.13.
 
-## Next: prepare the first public release
+## First public release
 
-- [ ] Select a license for the original code and writing; retain upstream notices.
+- [x] License original code under MIT and original writing, diagrams and explanatory data under CC BY 4.0; retain upstream notices.
 - [x] Review the staged repository contents and create its first commit.
-- [x] Create the private GitHub repository under `agenticaisecurity` and push only this companion.
+- [x] Publish the companion under `agenticaisecurity` with explicit implementation limits and licence terms.
+- [x] Include the current article and its three diagrams alongside the extended reference edition.
 - [x] Confirm the Python 3.11–3.13 CI matrix passes on GitHub (initial run: https://github.com/agenticaisecurity/agentic-ai-kill-chain/actions/runs/35427034310).
 - [ ] Ask for specific mapping or threat-model feedback; record corrections in the changelog.
 

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1200" viewBox="0 0 1440 1200" role="img" aria-labelledby="title desc">
+<title id="title">A memory write can become another task's input</title>
+<desc id="desc">Illustrative review path: external content enters task A; a write is authorized and stored with provenance and scope. Task B retrieves scoped content later; a tool action requires separate authorization. Reads, writes and execution produce protected audit events. A stored note is not an approval.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#7fe6d5"/></marker></defs>
+<rect width="1440" height="1200" fill="#0c1727"/>
+<g font-family="Arial, sans-serif">
+<text x="70" y="77" font-size="24" font-weight="700" fill="#7fe6d5">MEMORY, EXECUTION AND AUTHORITY</text>
+<text x="70" y="145" font-size="46" font-weight="700" fill="#f4f7fb">A write today can influence a task tomorrow.</text>
+<text x="70" y="196" font-size="27" fill="#bdcadd">Check both the stored information and the authority of its next use.</text>
+<text x="70" y="263" font-size="24" font-weight="700" fill="#91a5bf">CURRENT TASK</text>
+<g fill="#14253b" stroke="#30465f" stroke-width="2">
+<rect x="70" y="290" width="350" height="160" rx="16"/>
+<rect x="545" y="290" width="350" height="160" rx="16"/>
+<rect x="1020" y="290" width="350" height="160" rx="16" stroke="#d99840"/>
+<rect x="1020" y="535" width="350" height="150" rx="16"/>
+<rect x="545" y="770" width="350" height="175" rx="16"/>
+<rect x="1020" y="770" width="350" height="175" rx="16" stroke="#d99840"/>
+<rect x="70" y="770" width="350" height="175" rx="16"/>
+</g>
+<g font-size="31" font-weight="700" fill="#f4f7fb">
+<text x="100" y="342">External content</text>
+<text x="575" y="342">Task A</text>
+<text x="1050" y="342">Memory write</text>
+<text x="1050" y="585">Stored entry</text>
+<text x="1050" y="820">Memory retrieval</text>
+<text x="575" y="820">Task B</text>
+<text x="100" y="820">Tool execution</text>
+</g>
+<g font-size="25" fill="#bdcadd">
+<text x="100" y="386">Document, ticket,</text><text x="100" y="420">tool result or peer note</text>
+<text x="575" y="386">Uses the content;</text><text x="575" y="420">may request a write</text>
+<text x="1050" y="386">Check writer, purpose</text><text x="1050" y="420">and allowed fields</text>
+<text x="1050" y="627">Keep origin, scope</text><text x="1050" y="660">and intended lifetime</text>
+<text x="1050" y="864">Check reader, task</text><text x="1050" y="898">and current scope</text>
+<text x="575" y="864">Receives context;</text><text x="575" y="898">may propose an action</text>
+<text x="100" y="864">Authorize the actual</text><text x="100" y="898">resource and operation</text>
+</g>
+<g fill="none" stroke="#7fe6d5" stroke-width="4" marker-end="url(#arrow)">
+<path d="M430 370 H530"/>
+<path d="M905 370 H1005"/>
+<path d="M1195 460 V520"/>
+<path d="M1195 695 V755"/>
+<path d="M1010 855 H910"/>
+<path d="M535 855 H435"/>
+</g>
+<text x="70" y="624" font-size="37" font-weight="700" fill="#ffbd69">A stored note is not an approval.</text>
+<text x="70" y="667" font-size="25" fill="#bdcadd">An earlier writer should not be able to grant a later task more access.</text>
+<text x="70" y="745" font-size="24" font-weight="700" fill="#91a5bf">LATER TASK — FOLLOW THE PATH FROM RIGHT TO LEFT</text>
+<rect x="70" y="990" width="1300" height="100" rx="14" fill="#102d34" stroke="#27626a"/>
+<text x="100" y="1031" font-size="28" font-weight="700" fill="#7fe6d5">Collect evidence at the read, write and execution boundaries.</text>
+<text x="100" y="1070" font-size="24" fill="#bdcadd">Protect those records from the task's writes; control sensitive data in the records.</text>
+<text x="70" y="1150" font-size="23" fill="#91a5bf">Proposed review path, not an implemented memory defense or incident reconstruction. · @mdha81</text>
+</g></svg>

@@ -4,9 +4,9 @@
 
 ![The Agentic AI Kill Chain: six teaching categories, with paths that may skip, repeat or reorder stages.](docs/images/01-cover.png)
 
-A practitioner companion with a full article, six structured scenarios, versioned MITRE ATLAS associations, and a small runnable permission demonstration.
+A practitioner companion with a full article, six structured scenarios, versioned MITRE ATLAS associations, and a runnable permission demonstration.
 
-**Status: private development draft.** The scenarios are scripted explanations. The executable example tests a deterministic tool boundary using synthetic, in-memory data; it does not run an LLM or measure prompt-injection resistance. No MITRE, OWASP or employer endorsement is claimed.
+**Status: public practitioner companion.** The scenarios are scripted explanations. The executable example tests a deterministic tool boundary using synthetic, in-memory data; it does not run an LLM or measure prompt-injection resistance. No MITRE, OWASP or employer endorsement is claimed.
 
 ## Run the first example
 
@@ -41,7 +41,8 @@ The tests compare that result with [the checked-in result](examples/expected-res
 
 ## Explore the companion
 
-- [Full article](docs/article.md): six categories, trust boundaries, walkthroughs, controls and 19 source references.
+- [Current article](docs/articles/agentic-ai-kill-chain-v4/article.md): the review method, permission demo, audit-log correction, incident case study and proposed follow-up experiments.
+- [Extended reference edition](docs/article.md): six categories, detailed walkthroughs, controls and 19 numbered source references.
 - [Threat model and implementation boundaries](docs/threat-model.md): exactly what the runnable demo assumes and omits.
 - [Six structured scenarios](data/scenarios/): attacker control, victim access, output visibility, authority classification and static checkpoints.
 - [ATLAS crosswalk](data/atlas-crosswalk.json): author associations with a rationale and caveat for each tactic.
@@ -71,4 +72,4 @@ Useful feedback identifies a concrete assumption, incorrect mapping, missing pat
 
 Author: **Magesh Dhanasekaran**. Personal analysis based on public sources. Views are my own and do not represent my employer.
 
-License selection for original material is pending; see [LICENSE.md](LICENSE.md). Third-party sources retain their own terms; see [NOTICE.md](NOTICE.md).
+Original code is licensed under **MIT**; original writing, diagrams and explanatory data under **CC BY 4.0**. See [LICENSE.md](LICENSE.md) for exact scopes and full texts. Third-party material retains its own terms; see [NOTICE.md](NOTICE.md).

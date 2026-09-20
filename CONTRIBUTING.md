@@ -22,4 +22,4 @@ Keep these distinctions visible:
 
 Do not change expected results merely to make a failing test pass. Explain any changed policy or workload and preserve benign-task checks and residual failure cases.
 
-Original-material licensing is still pending in this private draft. Resolve the license before accepting external contributions or publishing a public release.
+By intentionally submitting original material for inclusion, you agree to license your contribution under the applicable terms in [LICENSE.md](LICENSE.md): MIT for code and CC BY 4.0 for original prose, diagrams and explanatory data. Identify third-party material and preserve its notices. Submit only material you are authorized to contribute.

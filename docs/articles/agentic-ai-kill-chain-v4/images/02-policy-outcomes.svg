@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" role="img" aria-labelledby="title desc">
+<title id="title">One read restriction. Three different outcomes.</title>
+<desc id="desc">Both policies complete the legitimate task. Broad access discloses the protected-file canary; scoped access blocks it. Both disclose a canary inside the allowed source. Fixed synthetic workloads with no model invoked.</desc>
+<rect width="1440" height="1000" fill="#0c1727"/>
+<g font-family="Arial, sans-serif">
+<text x="68" y="77" font-size="24" font-weight="700" fill="#7fe6d5">THE PERMISSION DEMO</text>
+<text x="68" y="145" font-size="48" font-weight="700" fill="#f4f7fb">One read restriction.</text>
+<text x="68" y="205" font-size="48" font-weight="700" fill="#f4f7fb">Three different outcomes.</text>
+<text x="68" y="259" font-size="26" fill="#bdcadd">Same supplied actions and output permission. Different read scope.</text>
+<rect x="68" y="305" width="1304" height="475" rx="18" fill="#14253b" stroke="#30465f"/>
+<text x="102" y="361" font-size="26" fill="#bdcadd">FIXED WORKLOAD</text>
+<text x="920" y="355" text-anchor="middle" font-size="29" fill="#f4f7fb" font-weight="700">BROAD</text>
+<text x="1218" y="355" text-anchor="middle" font-size="29" fill="#f4f7fb" font-weight="700">SCOPED</text>
+<path d="M 68 389 H 1372 M 68 519 H 1372 M 68 649 H 1372" stroke="#30465f"/>
+<text x="102" y="447" font-size="31" fill="#f4f7fb">Legitimate review task</text>
+<text x="102" y="483" font-size="24" fill="#bdcadd">Read source; publish fixed summary</text>
+<text x="920" y="461" text-anchor="middle" font-size="31" fill="#7fe6d5" font-weight="700">Completes</text>
+<text x="1218" y="461" text-anchor="middle" font-size="31" fill="#7fe6d5" font-weight="700">Completes</text>
+<text x="102" y="577" font-size="31" fill="#f4f7fb">Canary in protected file</text>
+<text x="102" y="613" font-size="24" fill="#bdcadd">Request read, then publication</text>
+<text x="920" y="591" text-anchor="middle" font-size="31" fill="#ffbd69" font-weight="700">Disclosed</text>
+<text x="1218" y="591" text-anchor="middle" font-size="31" fill="#7fe6d5" font-weight="700">Read denied</text>
+<text x="102" y="707" font-size="31" fill="#f4f7fb">Canary in allowed source</text>
+<text x="102" y="743" font-size="24" fill="#bdcadd">Same publication destination</text>
+<text x="920" y="721" text-anchor="middle" font-size="31" fill="#ffbd69" font-weight="700">Disclosed</text>
+<text x="1218" y="721" text-anchor="middle" font-size="31" fill="#ffbd69" font-weight="700">Disclosed</text>
+<text x="68" y="851" font-size="30" fill="#f4f7fb" font-weight="700">Allowed file access does not authorize every data transfer.</text>
+<text x="68" y="902" font-size="25" fill="#bdcadd">Synthetic, in-memory resources. Fixed actions. No LLM invoked.</text>
+<text x="68" y="943" font-size="23" fill="#91a5bf">Demonstration outcomes, not measured model attack-success rates. · @mdha81</text>
+</g></svg>

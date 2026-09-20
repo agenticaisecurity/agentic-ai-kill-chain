@@ -1,5 +1,11 @@
 # Changelog
 
+## Public companion release — September 20, 2026
+
+- Licensed original code under MIT and original prose, diagrams and explanatory data under CC BY 4.0; retained the upstream terms and included Apache-2.0 for the MITRE extract.
+- Added the current article and three diagrams alongside the extended reference edition. The article leads with the kill-chain method, explains the audit-log correction, and separates implemented behavior from future experiments.
+- Updated public status, contribution terms, attribution and the roadmap. The deterministic demo and its expected results are unchanged.
+
 ## Unreleased — review corrections, September 19, 2026
 
 - Reproduced disclosure of attacker-supplied identifiers in denied read and publish audit events; replaced raw audit resource fields with fixed fixture labels or a constant redaction marker, including on allowed calls.
