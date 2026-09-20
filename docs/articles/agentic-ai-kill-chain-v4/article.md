@@ -120,7 +120,11 @@ The controls should apply to an out-of-scope action regardless of how the agent 
 
 The Australian Signals Directorate's September paper, [*Agentic AI Harnesses: The layer above the model*](https://www.cyber.gov.au/sites/default/files/2026-09/Agentic%20AI%20Harnesses%20-%20The%20layer%20above%20the%20model.pdf), gives this discussion a useful foundation. It describes the harness as the software around the model that connects context, tools, memory and execution. It also makes the point that organizations need to assess and govern that layer, including when it arrives inside a commercial service.
 
-The paper recommends protection across the system, rather than relying on model behavior alone. I read that as a reason to inspect the actual implementation of permissions and oversight. Having a component called a permission manager does not tell me which calls it intercepts or what happens when it is unavailable.
+AWS makes a related point in its public article, [*Four security principles for agentic AI systems*](https://aws.amazon.com/blogs/security/four-security-principles-for-agentic-ai-systems/): enforce security through deterministic controls outside the model’s reasoning loop. For tool and data access, that is my first line of defence. A permission check should use the caller’s identity, the requested action and the target resource. It should not depend on whether the model agrees that the action is unsafe.
+
+Those checks still need to cover every route to the operation, and the agent must not be able to change them. Deterministic does not automatically mean secure. In my demo, the scoped policy blocks a protected-file read but still allows disclosure from an approved source. Access enforcement, controls on what can be published, and monitoring address different parts of the problem.
+
+Together, these sources give me a reason to inspect the actual implementation of permissions and oversight. Having a component called a permission manager does not tell me which calls it intercepts or what happens when it is unavailable.
 
 Consider a request to publish a review. The model may propose the text and destination. Something else loads the credential, constructs the request, decides whether approval is required and sends it. An application may then retry the request, log the response and save a note for the next run.
 
