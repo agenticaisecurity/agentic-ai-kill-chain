@@ -1,4 +1,4 @@
-# The Agentic AI Kill Chain
+# The Agentic AI Kill Chain: A Security Consultant’s View
 
 **How I trace an attack through an agent's tools, permissions, memory and delegated work.**
 
@@ -25,7 +25,7 @@ Each stage asks a different question about the path. I keep the stage separate f
 
 **INJECT** applies when untrusted content enters a path where it can influence instructions. The content could come from a document, saved memory or a peer's message. Delivery and influence need separate evidence.
 
-**HIJACK** means observable redirection away from the user-authorized task in the attacker's favor. An agent pursuing an unauthorized route on its own is a separate task deviation; without evidence of attacker influence, I do not label it a hijack.
+**HIJACK** means an attacker successfully redirects the agent away from the authorized task. If the agent takes an unauthorized action without evidence of attacker influence, I describe it as task deviation rather than hijacking.
 
 **ESCALATE** requires a change in effective authority. Reading a file through an already-granted permission is access misuse. A caller inducing a more privileged service to act needs a careful account of the authority available before and after the request.
 
